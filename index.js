@@ -1,5 +1,14 @@
-{
-  "product": [
+import express from "express"
+import cors from "cors"
+const app =  express()
+
+app.use(express.json())
+app.use(cors())
+app.get("/",(req,res)=>{
+    res.status(200).json({success: true,message:"server is running"})
+
+})
+const product =  [
     {
       "id": "tile_001",
       "title": "Ocean Blue Ceramic Tile",
@@ -241,4 +250,15 @@
       "inStock": true
     }
   ]
-}
+
+app.get("/product",(req,res)=>{
+    
+    res.status(200).json({
+        success: true,
+        message: "product found",
+        product
+    })
+})
+
+// app.listen(5000)
+// export default app

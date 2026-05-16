@@ -5,13 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server":"json-server --watch db.json --port 3001"
+    "server": "json-server --watch db.json --port 3001"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
     "json-server": "^1.0.0-beta.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdul-korim-web/tiles-gallery-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abdul-korim-web/tiles-gallery-server/issues"
+  },
+  "homepage": "https://github.com/abdul-korim-web/tiles-gallery-server#readme"
 }
