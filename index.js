@@ -260,5 +260,26 @@ app.get("/product",(req,res)=>{
     })
 })
 
+app.get("/product/:id", (req, res) => {
+
+    const { id } = req.params;
+
+    const singleProduct = product.find(
+        (item) => item.id === id
+    );
+
+    if (!singleProduct) {
+        return res.status(404).json({
+            success: false,
+            message: "product not found"
+        });
+    }
+
+    res.status(200).json({
+        success: true,
+        message: "single product found",
+        singleProduct
+    });
+});
 // app.listen(5000)
 export default app
